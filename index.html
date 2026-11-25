@@ -3,7 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>福井歯科｜スタッフ募集</title>
+<title>福井歯科医院（Fukui Dental Arts Smile X）｜スタッフ募集</title>
+<meta name="description" content="福井歯科医院（Fukui Dental Arts Smile X）の求人ページ。歯科衛生士・歯科助手を募集しています。">
+<meta property="og:title" content="福井歯科医院｜スタッフ募集">
+<meta property="og:description" content="歯科衛生士・歯科助手を募集中。インプラントに携わりたい方歓迎。">
+<meta property="og:image" content="https://fukui-dental.github.io/reception.jpg">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
 <style>
@@ -18,11 +23,11 @@
   header.top{background:#fff;border-bottom:1px solid var(--line)}
   header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .logo{font-family:"Zen Old Mincho",serif;font-size:22px;letter-spacing:.08em;color:var(--main-d)}
-  .logo small{font-family:"Noto Sans JP";font-size:12px;color:var(--sub);margin-left:10px;letter-spacing:.04em}
+  .logo small{font-family:"Noto Sans JP",sans-serif;font-size:11px;color:var(--sub);margin-left:10px;letter-spacing:.04em}
   .btn-sm{background:var(--main);color:#fff;text-decoration:none;padding:8px 18px;border-radius:999px;font-size:14px;font-weight:500}
 
-  .hero{background:linear-gradient(135deg,#1f7a6d 0%,#2a9886 60%,#5fb9a8 100%);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden}
-  .hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero{background:linear-gradient(100deg,rgba(18,40,38,.88) 0%,rgba(18,40,38,.62) 55%,rgba(18,40,38,.25) 100%),url(reception.jpg) center/cover no-repeat;color:#fff;padding:96px 0 88px;position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:1}
   .hero .label{display:inline-block;border:1px solid rgba(255,255,255,.6);padding:2px 14px;border-radius:999px;font-size:13px;letter-spacing:.1em}
   .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.4;margin:18px 0 12px;font-weight:700}
   .hero p{margin:0;opacity:.92;max-width:560px}
@@ -45,6 +50,22 @@
   table.req th{width:28%;background:var(--soft);font-weight:500;color:var(--main-d)}
   table.req tr:last-child th,table.req tr:last-child td{border-bottom:0}
   .tbd{background:#fff6e0;color:#8a6d1f;font-size:12px;padding:1px 8px;border-radius:4px;margin-left:6px;white-space:nowrap}
+
+  .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+  .gallery figure{margin:0;position:relative;border-radius:14px;overflow:hidden;background:#e9eeed;cursor:zoom-in}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:3/2;transition:transform .5s}
+  .gallery figure:hover img{transform:scale(1.04)}
+  .gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 14px 10px;font-size:13px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.55));letter-spacing:.04em}
+  .gallery .g-lg{grid-column:span 4;grid-row:span 2}
+  .gallery .g-lg img{aspect-ratio:auto;height:100%}
+  .gallery .g-sm{grid-column:span 2}
+  .gallery .g-md{grid-column:span 3}
+  .gallery .g-tall{grid-column:span 2}
+  .gallery .g-tall img{aspect-ratio:2/3}
+  .lightbox{position:fixed;inset:0;background:rgba(10,14,14,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+  .lightbox.on{display:flex}
+  .lightbox img{max-width:100%;max-height:85vh;border-radius:8px}
+  .lightbox p{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:#dfe7e6;font-size:14px;margin:0}
 
   .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;counter-reset:s}
   .flow div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;font-size:14px;color:var(--sub)}
@@ -86,24 +107,52 @@
     .form-card{padding:22px 18px}
     section{padding:44px 0}
     .logo small{display:none}
+    .gallery{grid-template-columns:1fr 1fr;gap:10px}
+    .gallery .g-lg,.gallery .g-md{grid-column:span 2;grid-row:auto}
+    .gallery .g-tall{grid-column:span 1}
+    .gallery .g-wide-m{grid-column:span 2}
+    .gallery .g-wide-m img{aspect-ratio:3/2}
+    .gallery .g-lg img{aspect-ratio:3/2}
+    .gallery .g-sm{grid-column:span 1}
+    .gallery figcaption{font-size:12px;padding:18px 10px 8px}
+    .hero{padding:72px 0 64px}
   }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <div class="logo">福井歯科<small>RECRUIT</small></div>
+    <div class="logo">福井歯科医院<small>Fukui Dental Arts Smile X</small></div>
     <a class="btn-sm" href="#apply" onclick="return jump('apply')">応募する</a>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <span class="label">STAFF RECRUITMENT</span>
+    <span class="label">福井歯科医院 スタッフ募集</span>
     <h1>患者さまの笑顔を、<br>一緒につくる仲間を募集しています。</h1>
     <p>歯科衛生士・歯科助手を募集中です。インプラント治療に携わりたい方、経験を活かしてステップアップしたい方を歓迎します。ブランクのある方もお気軽にご応募ください。</p>
   </div>
 </div>
+
+<section style="background:#fff">
+  <div class="wrap">
+    <h2>院内のご紹介</h2>
+    <p class="lead">アートと素材にこだわった、落ち着いた空間で働けます。</p>
+    <div class="gallery">
+      <figure class="g-lg"><img src="lounge.jpg" alt="アートが飾られたラウンジ" loading="lazy"><figcaption>ラウンジ</figcaption></figure>
+      <figure class="g-sm"><img src="lobby.jpg" alt="受付から待合へ" loading="lazy"><figcaption>待合スペース</figcaption></figure>
+      <figure class="g-sm"><img src="sink.jpg" alt="木格子天井の洗面スペース" loading="lazy"><figcaption>洗面スペース</figcaption></figure>
+      <figure class="g-md"><img src="unit.jpg" alt="診療スペース" loading="lazy"><figcaption>診療スペース</figcaption></figure>
+      <figure class="g-md"><img src="room.jpg" alt="個室の診療室" loading="lazy"><figcaption>個室診療室</figcaption></figure>
+      <figure class="g-tall"><img src="booth.jpg" alt="A〜Eの診療ブースが並ぶ通路" loading="lazy"><figcaption>診療ブース</figcaption></figure>
+      <figure class="g-tall"><img src="shelf.jpg" alt="コレクションが飾られた院内の棚" loading="lazy"><figcaption>院内のディテール</figcaption></figure>
+      <figure class="g-tall g-wide-m"><img src="reception.jpg" alt="受付" loading="lazy"><figcaption>受付</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lb"><img alt=""><p></p></div>
 
 <section>
   <div class="wrap">
@@ -141,7 +190,7 @@
     <table class="req">
       <tr><th>雇用形態</th><td>正社員（常勤）<span class="tbd">要確認</span><br>パート（非常勤）も相談可<span class="tbd">要確認</span></td></tr>
       <tr><th>給与</th><td>歯科衛生士：月給270,000円〜<br>歯科助手：月給215,000円〜<br>※経験・スキルを考慮のうえ決定</td></tr>
-      <tr><th>勤務地</th><td>福井歯科（住所を記載）<span class="tbd">要確認</span></td></tr>
+      <tr><th>勤務地</th><td>福井歯科医院（住所を記載）<span class="tbd">要確認</span></td></tr>
       <tr><th>勤務時間</th><td>9:00〜18:30（休憩あり）<span class="tbd">要確認</span></td></tr>
       <tr><th>休日・休暇</th><td>週休2日制（木・日・祝）、夏季・年末年始休暇<span class="tbd">要確認</span></td></tr>
       <tr><th>待遇・福利厚生</th><td>社会保険完備、交通費支給、昇給・賞与あり、制服貸与、研修・セミナー参加支援<span class="tbd">要確認</span></td></tr>
@@ -301,7 +350,7 @@
         <div class="fg" data-req="agree">
           <span class="lbl">個人情報の取り扱い<span class="req-mark">必須</span></span>
           <div class="privacy">
-            福井歯科（以下「当院」）は、本フォームでお預かりした個人情報を、採用選考およびそれに伴うご連絡のためにのみ利用します。法令に基づく場合を除き、ご本人の同意なく第三者に提供することはありません。不採用となった場合の応募情報は、選考終了後に責任をもって破棄します。個人情報の開示・訂正・削除のご希望は、当院採用担当までご連絡ください。
+            福井歯科医院（以下「当院」）は、本フォームでお預かりした個人情報を、採用選考およびそれに伴うご連絡のためにのみ利用します。法令に基づく場合を除き、ご本人の同意なく第三者に提供することはありません。不採用となった場合の応募情報は、選考終了後に責任をもって破棄します。個人情報の開示・訂正・削除のご希望は、当院採用担当までご連絡ください。
           </div>
           <div class="choices"><label><input type="checkbox" name="agree" value="1">個人情報の取り扱いに同意する</label></div>
           <div class="err-msg">同意が必要です</div>
@@ -320,7 +369,7 @@
   </div>
 </section>
 
-<footer>© 福井歯科</footer>
+<footer>© 福井歯科医院（Fukui Dental Arts Smile X）</footer>
 
 <script>
   var API = 'https://script.google.com/macros/s/AKfycbzjWUhU00to0pJMF_sJE3rARU8_Dljt7kU3BH0IRiVJr7AxAdNnaOecJ2BwysdufsVT/exec';
@@ -333,6 +382,15 @@
       .then(function(r){ return r.json(); });
   }
   function jump(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); return false; }
+
+  // ---- 写真の拡大表示 ----
+  (function(){
+    var lb = document.getElementById('lb'), img = lb.querySelector('img'), cap = lb.querySelector('p');
+    document.querySelectorAll('.gallery figure').forEach(function(f){
+      f.addEventListener('click', function(){ var i = f.querySelector('img'); img.src = i.src; img.alt = i.alt; cap.textContent = f.querySelector('figcaption').textContent; lb.classList.add('on'); });
+    });
+    lb.addEventListener('click', function(){ lb.classList.remove('on'); });
+  })();
 
   // ---- アクセス記録 ----
   (function(){
