@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>福井歯科｜スタッフ募集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f2a2e; --sub:#5b6b70; --line:#dfe7e6; --bg:#f6f9f8; --card:#fff;
+    --main:#1f7a6d; --main-d:#155e54; --soft:#e6f4f1; --accent:#c8a45a; --err:#c0392b;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px}
+  a{color:var(--main)}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  header.top{background:#fff;border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Zen Old Mincho",serif;font-size:22px;letter-spacing:.08em;color:var(--main-d)}
+  .logo small{font-family:"Noto Sans JP";font-size:12px;color:var(--sub);margin-left:10px;letter-spacing:.04em}
+  .btn-sm{background:var(--main);color:#fff;text-decoration:none;padding:8px 18px;border-radius:999px;font-size:14px;font-weight:500}
+
+  .hero{background:linear-gradient(135deg,#1f7a6d 0%,#2a9886 60%,#5fb9a8 100%);color:#fff;padding:72px 0 64px;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.07)}
+  .hero .label{display:inline-block;border:1px solid rgba(255,255,255,.6);padding:2px 14px;border-radius:999px;font-size:13px;letter-spacing:.1em}
+  .hero h1{font-size:clamp(28px,5vw,42px);line-height:1.4;margin:18px 0 12px;font-weight:700}
+  .hero p{margin:0;opacity:.92;max-width:560px}
+
+  section{padding:56px 0}
+  h2{font-size:24px;margin:0 0 8px;display:flex;align-items:center;gap:12px}
+  h2:before{content:"";width:6px;height:26px;background:var(--main);border-radius:3px}
+  .lead{color:var(--sub);margin:0 0 28px}
+
+  .jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+  .job{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative}
+  .job .tag{position:absolute;top:-12px;left:22px;background:var(--accent);color:#fff;font-size:12px;padding:2px 12px;border-radius:999px;font-weight:500}
+  .job h3{margin:4px 0 10px;font-size:20px}
+  .salary{font-size:15px;color:var(--sub)}
+  .salary strong{font-size:30px;color:var(--main-d);font-weight:700;margin-right:2px}
+  .job ul{margin:14px 0 0;padding-left:1.2em;color:var(--sub);font-size:14px}
+
+  table.req{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  table.req th,table.req td{padding:16px 18px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:15px}
+  table.req th{width:28%;background:var(--soft);font-weight:500;color:var(--main-d)}
+  table.req tr:last-child th,table.req tr:last-child td{border-bottom:0}
+  .tbd{background:#fff6e0;color:#8a6d1f;font-size:12px;padding:1px 8px;border-radius:4px;margin-left:6px;white-space:nowrap}
+
+  .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;counter-reset:s}
+  .flow div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;font-size:14px;color:var(--sub)}
+  .flow b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+  .flow b:before{counter-increment:s;content:"STEP " counter(s);display:block;font-size:11px;color:var(--main);letter-spacing:.1em}
+
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:32px}
+  .fg{margin-bottom:22px}
+  .fg > label,.fg > .lbl{display:block;font-weight:500;margin-bottom:8px;font-size:15px}
+  .req-mark{background:var(--err);color:#fff;font-size:11px;padding:1px 7px;border-radius:4px;margin-left:8px;vertical-align:2px}
+  .opt-mark{background:#cfd8d7;color:#fff;font-size:11px;padding:1px 7px;border-radius:4px;margin-left:8px;vertical-align:2px}
+  input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{
+    width:100%;padding:12px 14px;border:1px solid #cfd9d8;border-radius:8px;font:inherit;font-size:16px;background:#fbfdfd}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--main);box-shadow:0 0 0 3px rgba(31,122,109,.15);background:#fff}
+  textarea{min-height:150px;resize:vertical}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .choices{display:flex;flex-wrap:wrap;gap:10px}
+  .choices label{display:flex;align-items:center;gap:8px;border:1px solid #cfd9d8;border-radius:8px;padding:10px 16px;cursor:pointer;font-weight:400;background:#fbfdfd}
+  .choices input{accent-color:var(--main);width:18px;height:18px}
+  .choices label:has(input:checked){border-color:var(--main);background:var(--soft)}
+  .hint{font-size:13px;color:var(--sub);margin-top:6px}
+  .err-msg{color:var(--err);font-size:13px;margin-top:6px;display:none}
+  .fg.invalid .err-msg{display:block}
+  .fg.invalid input,.fg.invalid select,.fg.invalid textarea{border-color:var(--err)}
+  .privacy{background:var(--bg);border-radius:10px;padding:16px 18px;font-size:13px;color:var(--sub);max-height:150px;overflow:auto;margin-bottom:12px}
+  .hp{position:absolute;left:-9999px}
+  .submit{display:block;width:100%;max-width:360px;margin:30px auto 0;background:var(--main);color:#fff;border:0;border-radius:999px;padding:16px;font:inherit;font-size:17px;font-weight:700;cursor:pointer}
+  .submit:hover{background:var(--main-d)}
+  .submit:disabled{opacity:.6;cursor:wait}
+  .form-error{color:var(--err);text-align:center;margin-top:14px;display:none}
+  .done{display:none;text-align:center;padding:40px 10px}
+  .done .check{width:64px;height:64px;border-radius:50%;background:var(--soft);color:var(--main);font-size:34px;line-height:64px;margin:0 auto 16px}
+  footer{background:#1f2a2e;color:#b7c4c2;text-align:center;font-size:13px;padding:28px 0}
+
+  @media (max-width:600px){
+    .row2{grid-template-columns:1fr}
+    table.req th{width:auto;display:block;border-bottom:0;padding-bottom:6px}
+    table.req td{display:block;padding-top:6px}
+    .form-card{padding:22px 18px}
+    section{padding:44px 0}
+    .logo small{display:none}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="logo">福井歯科<small>RECRUIT</small></div>
+    <a class="btn-sm" href="#apply" onclick="return jump('apply')">応募する</a>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="label">STAFF RECRUITMENT</span>
+    <h1>患者さまの笑顔を、<br>一緒につくる仲間を募集しています。</h1>
+    <p>歯科衛生士・歯科助手を募集中です。インプラント治療に携わりたい方、経験を活かしてステップアップしたい方を歓迎します。ブランクのある方もお気軽にご応募ください。</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>募集職種</h2>
+    <p class="lead">経験年数に応じて給与をご相談させていただきます。</p>
+    <div class="jobs">
+      <div class="job">
+        <span class="tag">インプラント専門歯科衛生士も募集</span>
+        <h3>歯科衛生士</h3>
+        <div class="salary">月給 <strong>270,000</strong>円〜</div>
+        <ul>
+          <li>経験年数に応じて相談</li>
+          <li>インプラント専門歯科衛生士も含む</li>
+          <li>歯科衛生士免許をお持ちの方（取得見込み可）</li>
+        </ul>
+      </div>
+      <div class="job">
+        <span class="tag">インプラントアシストも募集</span>
+        <h3>歯科助手</h3>
+        <div class="salary">月給 <strong>215,000</strong>円〜</div>
+        <ul>
+          <li>経験年数に応じて相談</li>
+          <li>インプラントアシストも含む</li>
+          <li>未経験の方もご相談ください</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff">
+  <div class="wrap">
+    <h2>募集要項</h2>
+    <p class="lead">詳しい条件は面接時にご説明します。</p>
+    <table class="req">
+      <tr><th>雇用形態</th><td>正社員（常勤）<span class="tbd">要確認</span><br>パート（非常勤）も相談可<span class="tbd">要確認</span></td></tr>
+      <tr><th>給与</th><td>歯科衛生士：月給270,000円〜<br>歯科助手：月給215,000円〜<br>※経験・スキルを考慮のうえ決定</td></tr>
+      <tr><th>勤務地</th><td>福井歯科（住所を記載）<span class="tbd">要確認</span></td></tr>
+      <tr><th>勤務時間</th><td>9:00〜18:30（休憩あり）<span class="tbd">要確認</span></td></tr>
+      <tr><th>休日・休暇</th><td>週休2日制（木・日・祝）、夏季・年末年始休暇<span class="tbd">要確認</span></td></tr>
+      <tr><th>待遇・福利厚生</th><td>社会保険完備、交通費支給、昇給・賞与あり、制服貸与、研修・セミナー参加支援<span class="tbd">要確認</span></td></tr>
+      <tr><th>応募資格</th><td>歯科衛生士：歯科衛生士免許をお持ちの方（取得見込み可）<br>歯科助手：資格不問・未経験可</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>選考の流れ</h2>
+    <p class="lead">応募から内定まで、およそ1〜2週間を予定しています。</p>
+    <div class="flow">
+      <div><b>Web応募</b>下記フォームから送信</div>
+      <div><b>ご連絡</b>3営業日以内に担当者からご連絡</div>
+      <div><b>面接・見学</b>医院の雰囲気をご確認いただけます</div>
+      <div><b>内定</b>入職日をご相談のうえ決定</div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" style="background:#fff">
+  <div class="wrap">
+    <h2>応募フォーム</h2>
+    <p class="lead">入力時間の目安は約3分です。履歴書は面接時にご持参ください。</p>
+
+    <div class="form-card">
+      <form id="f" novalidate>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="fg" data-req="radio" data-name="job">
+          <span class="lbl">応募職種<span class="req-mark">必須</span></span>
+          <div class="choices">
+            <label><input type="radio" name="job" value="歯科衛生士">歯科衛生士</label>
+            <label><input type="radio" name="job" value="歯科衛生士（インプラント専門）">歯科衛生士（インプラント専門）</label>
+            <label><input type="radio" name="job" value="歯科助手">歯科助手</label>
+            <label><input type="radio" name="job" value="歯科助手（インプラントアシスト）">歯科助手（インプラントアシスト）</label>
+          </div>
+          <div class="err-msg">応募職種を選択してください</div>
+        </div>
+
+        <div class="fg">
+          <span class="lbl">希望雇用形態<span class="opt-mark">任意</span></span>
+          <div class="choices">
+            <label><input type="radio" name="style" value="正社員（常勤）">正社員（常勤）</label>
+            <label><input type="radio" name="style" value="パート（非常勤）">パート（非常勤）</label>
+            <label><input type="radio" name="style" value="相談したい">相談したい</label>
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="fg" data-req="text">
+            <label for="name">氏名<span class="req-mark">必須</span></label>
+            <input type="text" id="name" name="name" placeholder="福井 花子" autocomplete="name">
+            <div class="err-msg">氏名を入力してください</div>
+          </div>
+          <div class="fg" data-req="text">
+            <label for="kana">フリガナ<span class="req-mark">必須</span></label>
+            <input type="text" id="kana" name="kana" placeholder="フクイ ハナコ">
+            <div class="err-msg">フリガナを入力してください</div>
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="fg" data-req="text">
+            <label for="birth">生年月日<span class="req-mark">必須</span></label>
+            <input type="date" id="birth" name="birth" autocomplete="bday">
+            <div class="err-msg">生年月日を入力してください</div>
+          </div>
+          <div class="fg" data-req="tel">
+            <label for="tel">電話番号<span class="req-mark">必須</span></label>
+            <input type="tel" id="tel" name="tel" placeholder="090-1234-5678" autocomplete="tel">
+            <div class="err-msg">電話番号を正しく入力してください</div>
+          </div>
+        </div>
+
+        <div class="fg" data-req="email">
+          <label for="email">メールアドレス<span class="req-mark">必須</span></label>
+          <input type="email" id="email" name="email" placeholder="example@mail.com" autocomplete="email">
+          <div class="hint">受付完了メールをお送りします</div>
+          <div class="err-msg">メールアドレスを正しく入力してください</div>
+        </div>
+
+        <div class="fg">
+          <label for="address">お住まい（都道府県・市区町村）<span class="opt-mark">任意</span></label>
+          <input type="text" id="address" name="address" placeholder="例）大阪府大阪市">
+        </div>
+
+        <div class="fg">
+          <span class="lbl">保有資格<span class="opt-mark">任意・複数選択可</span></span>
+          <div class="choices">
+            <label><input type="checkbox" name="license" value="歯科衛生士免許">歯科衛生士免許</label>
+            <label><input type="checkbox" name="license" value="歯科衛生士（取得見込み）">歯科衛生士（取得見込み）</label>
+            <label><input type="checkbox" name="license" value="インプラント関連の認定資格">インプラント関連の認定資格</label>
+            <label><input type="checkbox" name="license" value="歯科助手関連資格">歯科助手関連資格</label>
+            <label><input type="checkbox" name="license" value="なし">なし</label>
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="fg" data-req="select">
+            <label for="experience">歯科での実務経験<span class="req-mark">必須</span></label>
+            <select id="experience" name="experience">
+              <option value="">選択してください</option>
+              <option>未経験</option><option>1年未満</option><option>1〜3年</option>
+              <option>3〜5年</option><option>5〜10年</option><option>10年以上</option>
+            </select>
+            <div class="err-msg">選択してください</div>
+          </div>
+          <div class="fg">
+            <label for="implant">インプラント治療の経験<span class="opt-mark">任意</span></label>
+            <select id="implant" name="implant">
+              <option value="">選択してください</option>
+              <option>あり（メインで担当）</option><option>あり（補助・アシスト）</option>
+              <option>なし（興味あり）</option><option>なし</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row2">
+          <div class="fg">
+            <label for="status">現在の就業状況<span class="opt-mark">任意</span></label>
+            <select id="status" name="status">
+              <option value="">選択してください</option>
+              <option>在職中</option><option>離職中</option><option>学生</option><option>その他</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="start">入職希望時期<span class="opt-mark">任意</span></label>
+            <select id="start" name="start">
+              <option value="">選択してください</option>
+              <option>すぐにでも</option><option>1ヶ月以内</option><option>3ヶ月以内</option>
+              <option>半年以内</option><option>相談したい</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="fg">
+          <span class="lbl">面接前の医院見学<span class="opt-mark">任意</span></span>
+          <div class="choices">
+            <label><input type="radio" name="visit" value="希望する">希望する</label>
+            <label><input type="radio" name="visit" value="希望しない">希望しない</label>
+          </div>
+        </div>
+
+        <div class="fg">
+          <label for="contactTime">ご連絡の希望時間帯<span class="opt-mark">任意</span></label>
+          <input type="text" id="contactTime" name="contactTime" placeholder="例）平日18時以降、メールでの連絡を希望 など">
+        </div>
+
+        <div class="fg" data-req="text">
+          <label for="motivation">志望動機・自己PR<span class="req-mark">必須</span></label>
+          <textarea id="motivation" name="motivation" placeholder="当院を選んだ理由、これまでの経験、得意なことなどをご自由にお書きください"></textarea>
+          <div class="err-msg">志望動機・自己PRを入力してください</div>
+        </div>
+
+        <div class="fg" data-req="agree">
+          <span class="lbl">個人情報の取り扱い<span class="req-mark">必須</span></span>
+          <div class="privacy">
+            福井歯科（以下「当院」）は、本フォームでお預かりした個人情報を、採用選考およびそれに伴うご連絡のためにのみ利用します。法令に基づく場合を除き、ご本人の同意なく第三者に提供することはありません。不採用となった場合の応募情報は、選考終了後に責任をもって破棄します。個人情報の開示・訂正・削除のご希望は、当院採用担当までご連絡ください。
+          </div>
+          <div class="choices"><label><input type="checkbox" name="agree" value="1">個人情報の取り扱いに同意する</label></div>
+          <div class="err-msg">同意が必要です</div>
+        </div>
+
+        <button class="submit" type="submit" id="btn">この内容で応募する</button>
+        <p class="form-error" id="formErr"></p>
+      </form>
+
+      <div class="done" id="done">
+        <div class="check">✓</div>
+        <h3 style="margin:0 0 8px">ご応募ありがとうございました</h3>
+        <p style="color:var(--sub);margin:0">ご入力いただいたメールアドレスに受付完了メールをお送りしました。<br>内容を確認のうえ、3営業日以内に担当者よりご連絡いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 福井歯科</footer>
+
+<script>
+  var API = 'https://script.google.com/macros/s/AKfycbzjWUhU00to0pJMF_sJE3rARU8_Dljt7kU3BH0IRiVJr7AxAdNnaOecJ2BwysdufsVT/exec';
+  var params = new URLSearchParams(location.search);
+  var SRC = params.get('src') || params.get('utm_source') || '';
+
+  function api(action, data){
+    return fetch(API, {method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({action:action, data:data}), redirect:'follow'})
+      .then(function(r){ return r.json(); });
+  }
+  function jump(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); return false; }
+
+  // ---- アクセス記録 ----
+  (function(){
+    var vid = null, isNew = false;
+    try {
+      vid = localStorage.getItem('fk_vid');
+      if (!vid) { vid = Math.random().toString(36).slice(2) + Date.now().toString(36); localStorage.setItem('fk_vid', vid); isNew = true; }
+    } catch(e) { vid = 'nostore-' + Math.random().toString(36).slice(2); isNew = true; }
+    var mobile = /iPhone|Android|Mobile/i.test(navigator.userAgent);
+    var inApp = /Instagram|FBAN|FBAV|Line\//i.test(navigator.userAgent);
+    var src = SRC || (/Instagram/i.test(navigator.userAgent) ? 'instagram' : /Line\//i.test(navigator.userAgent) ? 'line' : '');
+    SRC = src;
+    api('view', {vid:vid, isNew:isNew, src:src, mobile:mobile}).catch(function(){});
+  })();
+
+  // ---- フォーム ----
+  var form = document.getElementById('f');
+  function val(n){ var el = form.elements[n]; return el ? (el.value || '').trim() : ''; }
+  function checkedVals(n){ return Array.prototype.slice.call(form.querySelectorAll('input[name="'+n+'"]:checked')).map(function(i){return i.value;}); }
+
+  function validate(){
+    var first = null;
+    form.querySelectorAll('.fg[data-req]').forEach(function(g){
+      var t = g.dataset.req, ok = true, input = g.querySelector('input,select,textarea');
+      if (t === 'radio') ok = checkedVals(g.dataset.name).length > 0;
+      else if (t === 'agree') ok = form.querySelector('input[name=agree]').checked;
+      else if (t === 'email') ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+      else if (t === 'tel') ok = /^[0-9０-９\-－()\s+]{10,}$/.test(input.value.trim());
+      else ok = input.value.trim() !== '';
+      g.classList.toggle('invalid', !ok);
+      if (!ok && !first) first = g;
+    });
+    if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    return !first;
+  }
+  form.addEventListener('input', function(e){ var g = e.target.closest('.fg'); if (g) g.classList.remove('invalid'); });
+  form.addEventListener('change', function(e){ var g = e.target.closest('.fg'); if (g) g.classList.remove('invalid'); });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var errEl = document.getElementById('formErr'); errEl.style.display = 'none';
+    if (!validate()) return;
+    var data = {
+      website: val('website'), job: checkedVals('job')[0] || '', style: checkedVals('style')[0] || '',
+      name: val('name'), kana: val('kana'), birth: val('birth'), tel: val('tel'), email: val('email'),
+      address: val('address'), license: checkedVals('license').join('、'), experience: val('experience'),
+      implant: val('implant'), status: val('status'), start: val('start'), visit: checkedVals('visit')[0] || '',
+      contactTime: val('contactTime'), motivation: val('motivation'),
+      agree: form.querySelector('input[name=agree]').checked, src: SRC
+    };
+    var btn = document.getElementById('btn'); btn.disabled = true; btn.textContent = '送信中…';
+    function ok(){ form.style.display = 'none'; document.getElementById('done').style.display = 'block'; jump('apply'); }
+    function ng(msg){
+      btn.disabled = false; btn.textContent = 'この内容で応募する';
+      errEl.textContent = '送信できませんでした。' + (msg || '時間をおいて再度お試しください。');
+      errEl.style.display = 'block';
+    }
+    api('apply', data).then(function(r){ r && r.ok ? ok() : ng(r && r.error); }).catch(function(){ ng(); });
+  });
+</script>
+</body>
+</html>
